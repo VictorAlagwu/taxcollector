@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use App\Occupation;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -19,7 +20,7 @@ class RegisterController extends Controller
     | provide this functionality without requiring any additional code.
     |
     */
-
+    
     use RegistersUsers;
 
     /**
@@ -39,6 +40,11 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
+    public function showRegistrationForm()
+    {
+        $occupations = Occupation::all();
+        return view('auth.register', compact('occupations'));
+    }
     /**
      * Get a validator for an incoming registration request.
      *
@@ -49,6 +55,7 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => 'required|string|max:255',
+            'lastname' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
         ]);
@@ -64,6 +71,7 @@ class RegisterController extends Controller
     {
         return User::create([
             'name' => $data['name'],
+            'lastname' => $data['lastname'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
             'city' => $data['city'],
@@ -71,7 +79,7 @@ class RegisterController extends Controller
             'address' => $data['address'],
             'gender' => $data['gender'],
             'occupation_id' => $data['occupation_id'],
-            'income' => $data['integer'],
+            'income' => $data['income'],
             'marital_status' => $data['marital_status'],
             'status' => 'user',
         ]);
