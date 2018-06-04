@@ -4,36 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
-use App\Occupation;
+use Auth;
 use PDF;
 
-class HomeController extends Controller
+class PdfGenerateController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
-    /**
+    
+      /**
      * Show the application dashboard.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        return view('home');
-    }
-
-    public function applyTax()
-    {
-        return view('invoice.apply');
-    }
-
     public function getInvoice(Request $request)
     {
         $user = User::where('id', auth()->id())->get()->first();
@@ -48,4 +29,5 @@ class HomeController extends Controller
        
         return view('invoice.invoice');
     }
+
 }

@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::get('generate-pdf', 'PdfGenerateController@pdfview')->name('generate-pdf');
+Route::get('generate-pdf', 'PdfGenerateController@getInvoice')->name('invoice');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -23,3 +23,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('occupations', 'OccupationController@index');
 Route::post('occupations', 'OccupationController@store')->name('occupations');
 Route::get('occupations/create', 'OccupationController@create');
+
+Route::get('apply', 'HomeController@applyTax');
+Route::get('invoice', 'HomeController@getInvoice');
