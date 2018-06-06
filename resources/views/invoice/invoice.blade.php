@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>A simple, clean, and responsive HTML invoice template</title>
+    <title>Tax Invoice</title>
     
     <style>
     .invoice-box {
@@ -134,8 +134,8 @@
                             
                             <td>
                                {{$user->name}}<br>
-                                John Doe<br>
-                                john@example.com
+                                {{$user->lastname}}<br>
+                                {{$user->email}}
                             </td>
                         </tr>
                     </table>
@@ -171,7 +171,15 @@
                     {{$user->occupation->name}}
                 </td>
             </tr>
-            
+            <tr class="item">
+                <td>
+                   Earned Income
+                </td>
+                
+                <td>
+                    {{$user->occupation->taxrate}}%
+                </td>
+            </tr>
             <tr class="item">
                 <td>
                    Tax Rate
@@ -182,23 +190,24 @@
                 </td>
             </tr>
             
+            
             <tr class="item">
                 <td>
-                    Income
+                    Income Per Annum
                 </td>
                 
                 <td>
-                   ${{$user->income}}
+                   ${{number_format($user->income*12)}}
                 </td>
             </tr>
             
             <tr class="item last">
                 <td>
-                    Domain name (1 year)
+                    Tax Payment
                 </td>
                 
                 <td>
-                    $10.00
+                    {{number_format(($user->occupation->taxrate/100) * $user->income)}}
                 </td>
             </tr>
             
@@ -206,7 +215,7 @@
                 <td></td>
                 
                 <td>
-                   Total: $385.00
+                   Total: ${{number_format(($user->occupation->taxrate/100) * $user->income)}}.00
                 </td>
             </tr>
         </table>
