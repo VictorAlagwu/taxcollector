@@ -47,33 +47,32 @@ class TransactionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
         $this->validate($request, [
-            'transport' => 'max:20000',
-            'housing' => 'max:150000',
-            'utility' => 'max:10000',
-            'entertainment' => 'max:6000',
-            'children_num' => 'max:4',
-            'dependant_num' => 'max:2',
+            'transport' => 'integer|between:0,20000',
+            'housing' => 'integer|between:0,150000',
+            'utility' => 'integer|between:0,10000',
+            'entertainment' => 'integer|between:0,6000',
+            'children_num' => 'integer|between:1,4',
+            'dependant_num' => 'integer|between:1,2',
         ]);
 
         $transaction['user_id'] = auth()->id();
         $transaction['income'] = $request->income;
-        $transaction['transport'] = $request->transport;
-        $transaction['housing'] = $request->housing;
-        $transaction['utility'] = $request->utility;
-        $transaction['entertainment'] = $request->entertainment;
-        $transaction['children_num'] = $request->children_num;
-        $transaction['children'] = $request->children * $transaction['children_num'];
-        $transaction['dependant_num'] = $request->dependant_num;
+        $transaction['transport'] = empty($request->transport) ? 0 : $request->transport;
+        $transaction['housing'] = empty($request->housing) ? 0 : $request->housing;
+        $transaction['utility'] = empty($request->utility) ? 0 : $request->utility;
+        $transaction['entertainment'] = empty($request->entertainment) ? 0 : $request->entertainment;
+        $transaction['children_num'] = empty($request->children_num) ? 1 : $request->children_num;
+        $transaction['children'] = empty($request->children) ? 0 : ($request->children * $transaction['children_num']);
+        $transaction['dependant_num'] = empty($request->dependant_num) ? 1 : $request->dependant_num;
         $transaction['dependant'] = $request->dependant * $transaction['dependant_num'];
-        $transaction['pers'] = ($transaction['income'] * 0.2) + ($transaction['income'] >= 240000 ? 200000 : 20000);
         $transaction['pension'] = 0.008 *
                                     ($transaction['income'] + 
                                     $transaction['housing'] + 
                                     $transaction['transport']);
         $transaction['nhf'] = (0.025 * $transaction['income']);
-        $transaction['freepay'] = $transaction['nhf'] + $transaction['pension'] + $transaction['pers'];
+        
         $transaction['grosspay'] = $transaction['income'] + 
                                   $transaction['transport'] + 
                                   $transaction['housing'] + 
@@ -82,8 +81,11 @@ class TransactionController extends Controller
                                   $transaction['children'] +
                                   $transaction['dependant']
                                   ;
+        $transaction['pers'] = ($transaction['grosspay'] * 0.2) + (16666);
+        $transaction['freepay'] = $transaction['nhf'] + $transaction['pension'] + $transaction['pers'];
         $transaction['taxable'] = $transaction['grosspay'] - $transaction['freepay'];
 
+        // dd($transaction);
         Transaction::create($transaction);
         return redirect('/home');
 

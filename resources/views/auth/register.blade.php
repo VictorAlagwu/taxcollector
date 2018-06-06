@@ -87,12 +87,7 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="form-group">
-                                <label for="income" class="col-md-4 control-label">Income</label>
-                                <div class="col-md-6">
-                                    <input id="income" type="number" class="form-control" name="income"  required>
-                                </div>
-                        </div>
+                       
                         <div class="form-group">
                                 <label for="marital_status" class="col-md-4 control-label">Martial Status</label>
                                 <div class="col-md-6">

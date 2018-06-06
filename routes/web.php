@@ -27,5 +27,5 @@ Route::get('occupations/create', 'OccupationController@create');
 Route::get('apply', 'HomeController@applyTax');
 Route::get('invoice', 'HomeController@getInvoice');
 
-Route::get('tax/apply', 'TransactionController@create');
-Route::post('transaction/create', 'TransactionController@store');
+Route::get('tax', 'TransactionController@create');
+Route::post('tax/create', 'TransactionController@store');

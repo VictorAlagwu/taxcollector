@@ -8,7 +8,7 @@
                 <div class="panel-heading">Apply for Tax Invoice</div>
 
                 <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{url('transaction/create')}}">
+                    <form class="form-horizontal" method="POST" action="tax/create">
                         {{ csrf_field() }}
                     
                         <div class="form-group">
