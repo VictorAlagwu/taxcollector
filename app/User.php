@@ -33,4 +33,14 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Occupation::class);
     }
+
+    public function transactions()
+    {
+        return $this->hasMany(Transaction::class);
+    }
+
+    public function invoices()
+    {
+        return $this->hasMany(Invoice::class);
+    }
 }

@@ -17,7 +17,7 @@ class PdfGenerateController extends Controller
      */
     public function getInvoice(Request $request)
     {
-        $user = User::where('id', auth()->id())->get()->first();
+        $user = Transaction::where('id', auth()->id())->get()->first();
         view()->share('user',$user);
 
         if($request->has('download')) {

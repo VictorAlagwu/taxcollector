@@ -1,0 +1,17 @@
+[{
+  "id": 1,
+  "text": "Root node",
+  "icon":"wb-folder",
+  "state":{
+    "opened":true
+  },
+  "children": [{
+    "id": 2,
+    "text": "Child node 1",
+    "icon":"wb-folder"
+  }, {
+    "id": 3,
+    "text": "Child node 2",
+    "icon":"wb-folder"
+  }]
+}]

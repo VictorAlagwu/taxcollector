@@ -87,7 +87,7 @@ class TransactionController extends Controller
 
         // dd($transaction);
         Transaction::create($transaction);
-        return redirect('/home');
+        return redirect('tax/verify/');
 
     }
 
@@ -134,5 +134,13 @@ class TransactionController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function taxVerify($id)
+    {
+        $user = auth()->id();
+        $transaction = Transaction::where(['id' => $id, 'user_id' => $user])->first();
+
+        return view('taxs.verify', compact('transaction'));
     }
 }

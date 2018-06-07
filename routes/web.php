@@ -29,3 +29,4 @@ Route::get('invoice', 'HomeController@getInvoice');
 
 Route::get('tax', 'TransactionController@create');
 Route::post('tax/create', 'TransactionController@store');
+Route::get('tax/verify/{id}', 'TransactionController@taxVerify');
