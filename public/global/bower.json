@@ -1,0 +1,35 @@
+{
+  "name": "remark",
+  "private": true,
+  "version": "5.0.0",
+  "description": "The best backend-end framework for developing responsive, mobile first projects on the web.",
+  "dependencies": {
+    "FooTable": "git@github.com:fooplugins/FooTable.git",
+    "editable-table": "git@github.com:mindmup/editable-table.git",
+    "flot": "git@github.com:flot/flot.git",
+    "gauge.js": "git@github.com:bernii/gauge.js.git",
+    "jquery-labelauty": "labelauty#^1.1.0",
+    "jquery_appear": "^0.3.6",
+    "mapbox.js": "^3.1.1",
+    "media-match": "^2.0.3",
+    "nestable2": "git@github.com:RamonSmit/Nestable.git#^1.2.4",
+    "skycons": "git@github.com:darkskyapp/skycons.git",
+    "timecircles": "^1.5.3",
+    "animsition": "git@github.com:amazingSurge/animsition.git#master",
+    "toolbar": "git@github.com:paulkinzett/toolbar.git#master",
+    "chartist-plugin-tooltip": "git@github.com:tmmdata/chartist-plugin-tooltip.git#master"
+  },
+  "homepage": "http://getbootstrapadmin.com/remark",
+  "keywords": [
+    "css",
+    "js",
+    "scss",
+    "mobile-first",
+    "responsive",
+    "framework",
+    "web",
+    "admin",
+    "bootstrap-v4",
+    "bootstrap"
+  ]
+}

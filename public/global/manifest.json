@@ -1,0 +1,680 @@
+{
+  "cwd": "./",
+  "registries": {
+    "package": "src/packages"
+  },
+  "defaultRegistry": "npm",
+  "verbose": true,
+  "override": true,
+  "ignoreError": false,
+  "flattenPackages": false,
+  "flattenTypes": false,
+  "flatten": false,
+  "ignoreError": false,
+  "packages": {
+    "npm:jquery": {
+      "js": ["dist/jquery.js", "dist/jquery.min.js", "dist/jquery.min.map"]
+    },
+    "npm:ace-builds": ["src-min/**/*", {
+      "package": "ace"
+    }],
+    "npm:alertify.js": [{
+      "js": "dist/js",
+      "scss": "src/sass"
+    }, {
+      "package": "alertify"
+    }],
+    "bower:animsition": {
+      "js": "dist/js",
+      "scss": "src/css"
+    },
+    "npm:autosize": "dist/**/*",
+    "npm:blueimp-file-upload": {
+      "css": "css/jquery*.css",
+      "images": "img",
+      "js": "js"
+    },
+    "npm:blueimp-tmpl": {
+      "js": "js"
+    },
+    "npm:blueimp-load-image": {
+      "js": "js"
+    },
+    "npm:blueimp-canvas-to-blob": {
+      "js": "js"
+    },
+    "npm:bootbox": {
+      "js": ["bootbox.js", "bootbox.min.js"]
+    },
+    "npm:bootstrap-datepicker": {
+      "js": ["dist/js/**/*", "dist/locales/**/*"],
+      "less": "less"
+    },
+    "npm:bootstrap-hover-dropdown": {
+      "js": ["bootstrap-hover-dropdown.js", "bootstrap-hover-dropdown.min.js"]
+    },
+    "npm:bootstrap-markdown": {
+      "js": ["js/**/*", "locales/**/*"],
+      "less": "less"
+    },
+    "npm:bootstrap-maxlength": {
+      "js": ["bootstrap-maxlength.js", "bootstrap-maxlength.min.js"]
+    },
+    "npm:bootstrap-select": {
+      "js": "dist/js",
+      "scss": "sass"
+    },
+    "npm:bootstrap-sweetalert": {
+      "js": "dist/*.js",
+      "less": "lib"
+    },
+    "npm:bootstrap-table": {
+      "js": "dist",
+      "css": "src/bootstrap-table.css"
+    },
+    "npm:bootstrap-tagsinput": {
+      "js": ["dist/*.js", "dist/*.map"],
+      "css": "src/*.css"
+    },
+    "npm:bootstrap-tokenfield": {
+      "js": "dist/*.js",
+      "less": "less"
+    },
+    "npm:bootstrap-touchspin": {
+      "js": {
+        "bootstrap-touchspin.js": "dist/jquery.bootstrap-touchspin.js",
+        "bootstrap-touchspin.min.js": "dist/jquery.bootstrap-touchspin.min.js"
+      },
+      "css": "src/*.css"
+    },
+    "npm:bootstrap-treeview": {
+      "js": ["dist/*.js", "src/js/*.js"],
+      "css": "src/css"
+    },
+    "npm:breakpoints-js": [{
+      "js": "dist"
+    }, {
+      "package": "breakpoints"
+    }],
+    "npm:c3": {
+      "js": ["c3.js", "c3.min.js"],
+      "scss": "src/scss"
+    },
+    "npm:chart.js": [{
+      "js": "dist"
+    }, {
+      "package": "chart-js"
+    }],
+    "npm:chartist": {
+      "js":  ["dist/*.js", "dist/*.js.map"],
+      "scss": "dist/scss"
+    },
+    "bower:chartist-plugin-tooltip": [{
+      "js":  ["dist/*.js", "dist/*.js.map"],
+      "scss": "dist/*.css"
+    }, {
+      "package": "chartist-plugin-tooltip"
+    }],
+    "npm:clockpicker": {
+      "js": "dist/*.js",
+      "css": "src/*.css"
+    },
+    "npm:codemirror": {
+      "js": ["lib/*.js", "**/*.{js,css}", "!bin/**/*.js", "!src/**/*.js", "!rollup.config.js"],
+      "css": "lib/*.css"
+    },
+    "npm:cropper": {
+      "js": "dist/*.js",
+      "scss": "src/scss/*.scss"
+    },
+    "npm:d3": {
+      "js": ["./d3.js", "./d3.min.js"]
+    },
+    "npm:datatables.net": {
+      "js": "js",
+      "css": "css"
+    },
+    "npm:datatables.net-bs4": {
+      "js": "js",
+      "css": "css"
+    },
+    "npm:datatables.net-buttons": [{
+      "js": "js",
+      "css": "css"
+    }],
+    "npm:datatables.net-buttons-bs4": {
+      "js": "js",
+      "css": "css"
+    },
+    "npm:datatables.net-colreorder": [{
+      "js": "js",
+      "css": "css"
+    }],
+    "npm:datatables.net-colreorder-bs4": {
+      "js": "js",
+      "css": "css"
+    },
+    "npm:datatables.net-fixedcolumns": [{
+      "js": "js",
+      "css": "css"
+    }],
+    "npm:datatables.net-fixedcolumns-bs4": {
+      "js": "js",
+      "css": "css"
+    },
+    "npm:datatables.net-fixedheader": [{
+      "js": "js",
+      "css": "css"
+    }],
+    "npm:datatables.net-fixedheader-bs4": {
+      "js": "js",
+      "css": "css"
+    },
+    "npm:datatables.net-responsive": {
+      "js": "js",
+      "css": "css"
+    },
+    "npm:datatables.net-responsive-bs4": {
+      "js": "js",
+      "css": "css"
+    },
+    "npm:datatables.net-rowgroup": [{
+      "js": "js",
+      "css": "css"
+    }],
+    "npm:datatables.net-rowgroup-bs4": {
+      "js": "js",
+      "css": "css"
+    },
+    "npm:datatables.net-rowreorder": [{
+      "js": "js",
+      "css": "css"
+    }],
+    "npm:datatables.net-rowreorder-bs4": {
+      "js": "js",
+      "css": "css"
+    },
+    "npm:datatables.net-scroller": [{
+      "js": "js",
+      "css": "css"
+    }],
+    "npm:datatables.net-scroller-bs4": {
+      "js": "js",
+      "css": "css"
+    },
+    "npm:datatables.net-select": [{
+      "js": "js",
+      "css": "css"
+    }],
+    "npm:datatables.net-select-bs4": {
+      "js": "js",
+      "css": "css"
+    },
+    "npm:datatables": [{
+      "js": "media/js/*.js",
+      "images": "media/images",
+      "css": ["media/css/*.css", "!media/css/*.min.css"]
+    }, {
+      "package": "datatables"
+    }],
+    "npm:datatables-bootstrap": {
+      "js": "js",
+      "images": "images",
+      "css": ["css/*.css", "!css/*.min.css"]
+    },
+    "npm:datatables-fixedheader": {
+      "js": "js",
+      "css": "css"
+    },
+    "npm:datatables-responsive": {
+      "js": "js",
+      "scss": "css"
+    },
+    "npm:datatables-tabletools": {
+      "js": "js",
+      "images": "images/*.png",
+      "css": "css/*.css"
+    },
+    "npm:datepair.js": [{
+      "js": "dist"
+    }, {
+      "package": "datepair"
+    }],
+    "npm:draggabilly": {
+      "js": "dist"
+    },
+    "npm:dropify": {
+      "js": "dist/js",
+      "scss": "dist/sass/*.scss",
+      "fonts": "dist/fonts"
+    },
+    "npm:flag-icon-css": {
+      "images": "**/*.svg",
+      "scss": "sass"
+    },
+    "npm:floatthead": [{
+      "js": ["dist/*.js"]
+    }, {
+      "package": "floatthead"
+    }],
+    "npm:formatter.js": [{
+      "js": ["dist/*.js"]
+    }, {
+      "package": "formatter"
+    }],
+    "npm:fullcalendar": {
+      "js": "dist/**/*.js",
+      "css": ["dist/*.css", "!dist/*.min.css"]
+    },
+    "npm:gmaps": {
+      "js": ["gmaps.js", "gmaps.min.js", "gmaps.min.js.map"]
+    },
+    "npm:gridstack": {
+      "js": ["dist/*.js", "dist/*.map"],
+      "scss": "src/*.scss"
+    },
+    "npm:holderjs": {
+      "js": ["holder.js", "holder.min.js"]
+    },
+    "npm:html5shiv": {
+      "js": "dist"
+    },
+    "npm:sortablejs": [{
+      "js": ["Sortable.js", "Sortable.min.js"]
+    }, {
+      "package": "sortable"
+    }],
+    "npm:html5sortable": {
+      "js": "dist"
+    },
+    "npm:icheck": {
+      "js": ["icheck.js", "icheck.min.js"],
+      "images": "skins/flat/*.png",
+      "css": "skins/flat/*.css"
+    },
+    "npm:intro.js": [{
+      "js": ["intro.js", "intro-rtl.js", "minified/*.js"],
+      "css": ["themes/*.css", "introjs.css", "introjs-rtl.css"]
+    }, {
+      "package": "intro-js"
+    }],
+    "npm:ion-rangeslider": [{
+      "js": "js",
+      "css": "css/ion*.css",
+      "images": "img"
+    }, {
+      "package": "ionrangeslider"
+    }],
+    "npm:isotope-layout": [{
+      "js": "dist"
+    }, {
+      "package": "isotope"
+    }],
+    "npm:imagesloaded": [{
+      "js": ["imagesloaded.js","imagesloaded.*"]
+    }],
+    "npm:jquery-asBreadcrumbs": [{
+      "js": "dist/*.js",
+      "scss": "src/scss/*.scss"
+    }, {
+      "package": "asbreadcrumbs"
+    }],
+    "npm:jquery-asColor": [{
+      "js": "dist/*.js"
+    }, {
+      "package": "ascolor"
+    }],
+    "npm:jquery-asColorPicker": [{
+      "js": "dist/*.js",
+      "scss": "src/scss/*.scss",
+      "images": "dist/images"
+    }, {
+      "package": "ascolorpicker"
+    }],
+    "npm:jquery-asGradient": [{
+      "js": "dist/*.js"
+    }, {
+      "package": "asgradient"
+    }],
+    "npm:jquery-asHoverScroll": [{
+      "js": "dist/*.js",
+      "scss": "src/scss/*.scss"
+    }, {
+      "package": "ashoverscroll"
+    }],
+    "npm:jquery-asPaginator": [{
+      "js": "dist/*.js",
+      "scss": "src/scss/*.scss"
+    }, {
+      "package": "aspaginator"
+    }],
+    "npm:jquery-asPieProgress": [{
+      "js": "dist/*.js",
+      "scss": "src/scss/*.scss"
+    }, {
+      "package": "aspieprogress"
+    }],
+    "npm:jquery-asProgress": [{
+      "js": "dist/*.js",
+      "scss": "src/scss/*.scss"
+    }, {
+      "package": "asprogress"
+    }],
+    "npm:jquery-asRange": [{
+      "js": "dist/*.js",
+      "scss": "src/scss/*.scss"
+    }, {
+      "package": "asrange"
+    }],
+    "npm:jquery-asScrollable": [{
+      "js": "dist/*.js",
+      "scss": "src/scss/*.scss"
+    }, {
+      "package": "asscrollable"
+    }],
+    "npm:jquery-asScrollbar": [{
+      "js": "dist/*.js",
+      "scss": "src/scss/*.scss"
+    }, {
+      "package": "asscrollbar"
+    }],
+    "npm:jquery-asSpinner": [{
+      "js": "dist/*.js",
+      "scss": "src/scss/*.scss"
+    }, {
+      "package": "asspinner"
+    }],
+    "npm:jquery-knob": {
+      "js": ["dist/*.js", "js/*.js"]
+    },
+    "npm:jquery-match-height": [{
+      "js": "dist"
+    }, {
+      "package": "matchheight"
+    }],
+    "npm:jquery-mousewheel": [{
+      "js": "*.js"
+    }, {
+      "package": "mousewheel"
+    }],
+    "npm:jquery-placeholder": true,
+    "npm:jquery-selective": {
+      "js": "dist/*.js",
+      "scss": "src/scss/*.scss"
+    },
+    "npm:jquery-slidePanel": [{
+      "js": "dist/*.js",
+      "scss": "src/scss/*.scss"
+    }, {
+      "package": "slidepanel"
+    }],
+    "npm:jquery-strength": {
+      "js": "dist/*.js",
+      "scss": "src/scss/*.scss"
+    },
+    "npm:@fnando": [{
+      "js": "password_strength.js"
+    }, {
+      "package": "jquery-strength"
+    }],
+    "npm:jquery-tabledit": {
+      "js": ["jquery.tabledit.js", "jquery.tabledit.min.js"]
+    },
+    "npm:jquery-ui": {
+      "js": "ui/**/*"
+    },
+    "npm:jquery-wizard": {
+      "js": "dist/*.js",
+      "scss": "src/scss/*.scss"
+    },
+    "npm:jquery.mmenu": [{
+      "js": "dist/js",
+      "scss": "src/css/**/*.scss"
+    }, {
+      "package": "jquery-mmenu"
+    }],
+    "npm:jsgrid": {
+      "js": "dist/**/*.js",
+      "css": "css/*.css"
+    },
+    "npm:jstree": {
+      "js": "dist/*.js",
+      "less": "src/themes/**/*.less",
+      "images": ["dist/themes/default/*.png", "dist/themes/default/*.gif"]
+    },
+    "npm:jvectormap": {
+      "js": ["jquery-jvectormap.js", "jquery-jvectormap.min.js"],
+      "css": "./*.css"
+    },
+    "npm:ladda": {
+      "js": "dist/*.js",
+      "css": "css/*.css"
+    },
+    "npm:layout-grid": {
+      "js": "dist/js/*.js",
+      "sass": "sass/*.sass"
+    },
+    "npm:magnific-popup": {
+      "js": "dist/*.js",
+      "scss": "src/css/*.scss"
+    },
+    "npm:maplace-js": {
+      "js": "dist/*.js"
+    },
+    "npm:marked": {
+      "js": "lib/*.js"
+    },
+    "npm:masonry-layout": [{
+      "js": "dist/*.js"
+    }, {
+      "package": "masonry"
+    }],
+    "npm:moment": {
+      "js": ["moment.js", "min/*.js", "!src/*.js"]
+    },
+    "npm:morris.js": [{
+      "js": ["morris.js", "morris.min.js"],
+      "less": "less"
+    }, {
+      "package": "morris"
+    }],
+    "npm:multiselect": [{
+      "js": "js/*.js",
+      "css": "css/*.css"
+    }, {
+      "package": "multi-select"
+    }],
+    "npm:notie": {
+      "js": ["dist/*.js"],
+      "scss": "src/*.scss"
+    },
+    "npm:nprogress": {
+      "js": "nprogress.js",
+      "css": "./*.css"
+    },
+    "npm:owl.carousel": [{
+      "js": "dist/*.js",
+      "scss": "src/scss"
+    }, {
+      "package": "owl-carousel"
+    }],
+    "npm:peity": {
+      "js": "jquery.*.js"
+    },
+    "npm:plyr": {
+      "js": "dist/*.js",
+      "images": "dist/*.svg",
+      "scss": "src/scss/*.scss"
+    },
+    "npm:popper.js": [{
+      "js": "dist"
+    }, {
+      "package": "popper-js"
+    }],
+    "npm:raphael": {
+      "js": "raphael*.js"
+    },
+    "npm:raty-js": [{
+      "js": "lib/*.js"
+    }, {
+      "package": "raty"
+    }],
+    "npm:respond.js": [{
+      "js": "dest/*.js"
+    }, {
+      "package": "respond"
+    }],
+    "npm:rickshaw": {
+      "js": "./*.js",
+      "css": "src/css/**/*.css"
+    },
+    "npm:screenfull": true,
+    "npm:select2": {
+      "js": "dist/js/**/*.js",
+      "scss": "src/scss/**/*.scss"
+    },
+    "npm:slick-carousel": {
+      "js": "slick/*.js",
+      "fonts": "slick/fonts",
+      "images": "slick/*.gif",
+      "scss": "slick/*.scss"
+    },
+    "npm:stickyfilljs": [{
+      "js": "dist/*.js"
+    },{
+      "package": "stickyfill"
+    }],
+    "npm:summernote": {
+      "js": "dist/*.js",
+      "fonts": "dist/font",
+      "scss": "src/less/*.scss"
+    },
+    "npm:switchery-npm": [{
+      "js": {
+        "switchery.js": "index.js"
+      },
+      "css": {
+        "switchery.css": "index.css"
+      }
+    }, {
+      "package": "switchery"
+    }],
+    "npm:tablesaw": {
+      "js": "dist/*.js",
+      "css": "src/*.css",
+      "scss": "src/*.scss"
+    },
+    "npm:table-dragger": {
+      "js": "dist/*.js"
+    },
+    "npm:tether": {
+      "js": "dist/js/*.js"
+    },
+    "npm:textarea-autosize": {
+      "js": "dist/*.js"
+    },
+    "npm:timepicker": {
+      "js": "./jquery.*.js",
+      "css": "./*.css"
+    },
+    "npm:to-markdown": {
+      "js": "dist/*.js"
+    },
+    "npm:toastr": {
+      "js": ["./toastr.js", "build/*.js", "build/*.js.map"],
+      "scss": "./toastr.scss"
+    },
+    "npm:typeahead.js": [{
+      "js": "dist/*.js"
+    }, {
+      "package": "typeahead-js"
+    }],
+    "npm:webui-popover": {
+      "js": "dist/*.js",
+      "less": "src/*.less"
+    },
+    "npm:x-editable":  {
+      "js": "dist/bootstrap3-editable/js/*.js",
+      "css": "dist/bootstrap3-editable/css/*.css"
+    },
+    "bower:flot": [{
+      "js": "jquery.*.js"
+    }, {
+      "package": "flot"
+    }],
+    "bower:FooTable": [{
+      "js": "compiled/*.js",
+      "css": "src/css"
+    }, {
+      "package": "footable"
+    }],
+    "bower:editable-table": [{
+      "js": "mindmup-editabletable.js"
+    }, {
+      "package": "editable-table"
+    }],
+    "bower:gauge.js": [{
+      "js": "dist/*.js"
+    }, {
+      "package": "gauge-js"
+    }],
+    "bower:jquery-labelauty": {
+      "js": "source/*.js",
+      "css": "source/*.css",
+      "images": "source/images/*.png"
+    },
+    "bower:jquery_appear": [{
+      "js": "*.js"
+    }, {
+      "package": "jquery-appear"
+    }],
+    "bower:mapbox.js": [{
+      "js": "*.{js,.js.map}",
+      "css": "*.css",
+      "images": "images"
+    }, {
+      "package": "mapbox-js"
+    }],
+    "package:leaflet-markercluster": [{
+      "js": "*.js",
+      "css": "*.css"
+    }, {
+      "package": "mapbox-js"
+    }],
+    "bower:media-match": {
+      "js": "*.js"
+    },
+    "bower:nestable2": [{
+      "js": "*.js",
+      "css": "*.css"
+    }, {
+      "package": "nestable"
+    }],
+    "bower:skycons": {
+      "js": "*.js"
+    },
+    "bower:toolbar": {
+      "js": "jquery.toolbar.js",
+      "css": "jquery*.css"
+    },
+    "package:highlight.js": [{
+      "js": "highlight.pack.js",
+      "css": "styles"
+    }, {
+      "package": "highlight"
+    }],
+    "package:formvalidation": {
+      "js": ["dist/js/**/*.js", "!dist/js/framework/{foundation,pure,semantic,uikit}*"],
+      "css": ["src/css/base.css", "src/css/framework/bootstrap.css"]
+    },
+    "package:jquery.sparkline": [{
+      "js": "*.js"
+    }, {
+      "package": "sparkline"
+    }],
+    "npm:jquery-contextmenu": {
+      "js": ["dist/*.js", "dist/*.js.map"],
+      "sass": "src/sass/*.scss"
+    }
+  }
+}

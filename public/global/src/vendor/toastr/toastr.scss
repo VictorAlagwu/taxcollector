@@ -1,0 +1,311 @@
+@import 'vars';
+
+
+// Mix-ins
+@mixin word-wrap($value: break-word) {
+  -ms-word-wrap: $value;
+  word-wrap: $value;
+}
+
+// Variables
+$black: #000;
+$white: #fff;
+$default: #e4eaee;
+$success: $inverse;
+$success-bg: $brand-success-hover;
+$error: $inverse;
+$error-bg: $brand-danger-hover;
+$info: $inverse;
+$info-bg: $brand-info-hover;
+$warning: $inverse;
+$warning-bg: $brand-warning-hover;
+$progress-bg: #000;
+$default-container-opacity: .95;
+
+// z-index
+$toastr-z-index: zindex('modal', 0);
+$toastr-border-color: rgba(0, 0, 0, .1);
+$toastr-border-radius: $border-radius;
+
+// Styles
+.toast-title {
+  font-weight: $font-weight-bold;
+}
+
+.toast-message {
+  @include word-wrap();
+
+  a, label {
+    color: $white;
+  }
+
+  a:hover {
+    color: $gray-300;
+    text-decoration: none;
+  }
+}
+
+.toast-close-button {
+  position: relative;
+  top: -0.3em;
+  right: -0.3em;
+  float: right;
+  margin-bottom: -.5em;
+  font-size: 20px;
+  font-weight: $font-weight-normal;
+  color: $white;
+  -webkit-text-shadow: 0 1px 0 rgba(255, 255, 255, 1);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 1);
+  opacity: .8;
+
+  &:hover, &:focus {
+    color: $black;
+    text-decoration: none;
+    cursor: pointer;
+    opacity: .4;
+  }
+}
+
+/*Additional properties for button version
+ iOS requires the button element instead of an anchor tag.
+ If you want the anchor version, it requires `href="#"`.*/
+button.toast-close-button {
+  padding: 0;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  -webkit-appearance: none;
+}
+
+//#endregion
+
+.toast-top-center {
+  top: 12px;
+  right: 0;
+  width: 100%;
+}
+
+.toast-bottom-center {
+  right: 0;
+  bottom: 12px;
+  width: 100%;
+}
+
+.toast-top-full-width {
+  top: 0;
+  right: 0;
+  width: 100%;
+
+  .toast {
+    margin-bottom: 0;
+  }
+}
+
+.toast-bottom-full-width {
+  right: 0;
+  bottom: 0;
+  width: 100%;
+
+  .toast {
+    margin-bottom: 0;
+  }
+}
+
+.toast-top-left {
+  top: 12px;
+  left: 12px;
+}
+
+.toast-top-right {
+  top: 12px;
+  right: 12px;
+}
+
+.toast-bottom-right {
+  right: 12px;
+  bottom: 12px;
+}
+
+.toast-bottom-left {
+  bottom: 12px;
+  left: 12px;
+}
+
+[aria-live="polite"] {
+  position: fixed;
+  // z-index: 999999;
+  z-index: $toastr-z-index;
+  pointer-events: none;
+
+  * {
+    box-sizing: border-box;
+  }
+
+  > div {
+    position: relative;
+    width: 300px;
+    padding: 15px 20px;
+    margin: 0 0 6px;
+    overflow: hidden;
+    color: $gray-400;
+    pointer-events: auto;
+    background-repeat: no-repeat;
+    background-position: 15px center;
+    border: 1px solid $toastr-border-color;
+    border-radius: $toastr-border-radius;
+    opacity: $default-container-opacity;
+  }
+
+  > .toast-shadow {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .23);
+
+    &:hover {
+      box-shadow: 0 1px 6px rgba(0, 0, 0, .23);
+    }
+  }
+
+  > :hover {
+    cursor: pointer;
+    opacity: 1;
+  }
+
+  > .toast-success, > .toast-info, > .toast-warning, > .toast-error {
+    &:not(.toast-just-text) {
+      padding-left: 50px;
+
+      &:before {
+        position: absolute;
+        top: 50%;
+        left: 12px;
+        font-family: $wb-font-family;
+        font-size: 30px;
+        font-style: normal;
+        font-weight: $font-weight-normal;
+        transform: translate(0, -50%);
+        text-rendering: auto;
+        speak: none;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+    }
+  }
+
+  > .toast-success {
+    color: $success;
+
+    &:not(.toast-just-text) {
+      &:before {
+        content: $wb-var-check;
+      }
+    }
+  }
+
+  > .toast-info {
+    color: $info;
+
+    &:not(.toast-just-text) {
+      &:before {
+        content: $wb-var-info-circle;
+      }
+    }
+  }
+
+  > .toast-warning {
+    color: $warning;
+
+    &:not(.toast-just-text) {
+      &:before {
+        content: $wb-var-warning;
+      }
+    }
+  }
+
+  > .toast-error {
+    color: $error;
+
+    &:not(.toast-just-text) {
+      &:before {
+        content: $wb-var-alert-circle;
+      }
+    }
+  }
+
+  /*overrides*/
+  &.toast-top-center > div, &.toast-bottom-center > div {
+    width: 300px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  &.toast-top-full-width > div, &.toast-bottom-full-width > div {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 0;
+  }
+}
+
+.toast {
+  background-color: $default;
+}
+
+.toast-success {
+  background-color: $success-bg;
+}
+
+.toast-error {
+  background-color: $error-bg;
+}
+
+.toast-info {
+  background-color: $info-bg;
+}
+
+.toast-warning {
+  background-color: $warning-bg;
+}
+
+.toast-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  background-color: $progress-bg;
+  opacity: .1;
+}
+
+/*Responsive Design*/
+
+@media all and (max-width: 240px) {
+  [aria-live="polite"] {
+    > div {
+      width: 11em;
+    }
+
+    & .toast-close-button {
+      top: -0.2em;
+      right: -0.2em;
+    }
+  }
+}
+
+@media all and (min-width: 241px) and (max-width: 480px) {
+  [aria-live="polite"] {
+    > div {
+      width: 18em;
+    }
+
+    & .toast-close-button {
+      top: -0.2em;
+      right: -0.2em;
+    }
+  }
+}
+
+@include media-breakpoint-only(sm) {
+  [aria-live="polite"] {
+    > div {
+      width: 25em;
+    }
+  }
+}

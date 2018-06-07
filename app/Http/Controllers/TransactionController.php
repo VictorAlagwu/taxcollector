@@ -141,6 +141,8 @@ class TransactionController extends Controller
         $user = auth()->id();
         $transaction = Transaction::where(['id' => $id, 'user_id' => $user])->first();
 
+        // $invoice = uniqid('#TAX',);
+
         return view('taxs.verify', compact('transaction'));
     }
 }
