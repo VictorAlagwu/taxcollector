@@ -14,6 +14,10 @@ class InvoiceController extends Controller
     public function index()
     {
         //
+        $user = auth()->id();
+        $transactions = Transaction::where('user_id', $user);
+        
+        return view('invoice.index', compact('transactions'));
     }
 
     /**

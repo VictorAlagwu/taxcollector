@@ -26,6 +26,8 @@ class TransactionController extends Controller
     public function index()
     {
         //
+        $transactions = Transaction::where('user_id', auth()->id())->get();
+        return view('taxs.index', compact('transactions'));
     }
 
     /**
@@ -84,10 +86,11 @@ class TransactionController extends Controller
         $transaction['pers'] = ($transaction['grosspay'] * 0.2) + (16666);
         $transaction['freepay'] = $transaction['nhf'] + $transaction['pension'] + $transaction['pers'];
         $transaction['taxable'] = $transaction['grosspay'] - $transaction['freepay'];
+        $transaction['status'] = "pending";
 
         // dd($transaction);
-        Transaction::create($transaction);
-        return redirect('tax/verify/');
+        $transaction = Transaction::create($transaction);
+        return redirect('tax/verify/'.$transaction->id);
 
     }
 
