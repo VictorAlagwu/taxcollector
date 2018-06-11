@@ -6,13 +6,10 @@
     "type": "project",
     "require": {
         "php": ">=7.0.0",
-        "barryvdh/laravel-dompdf": "^0.8.2",
-        "barryvdh/laravel-snappy": "^0.4.1",
         "fideloper/proxy": "~3.3",
-        "h4cc/wkhtmltoimage-i386": "0.12.x",
-        "h4cc/wkhtmltopdf-i386": "0.12.x",
         "laravel/framework": "5.5.*",
-        "laravel/tinker": "~1.0"
+        "laravel/tinker": "~1.0",
+        "unicodeveloper/laravel-paystack": "^1.0"
     },
     "require-dev": {
         "filp/whoops": "~2.0",

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
+use Unicodeveloper\Paystack\Paystack;
 use App\Transaction;
 
 class TransactionController extends Controller
@@ -141,11 +143,19 @@ class TransactionController extends Controller
 
     public function taxVerify($id)
     {
+        // $paystack = Paystack::genTranxRef();
         $user = auth()->id();
         $transaction = Transaction::where(['id' => $id, 'user_id' => $user])->first();
 
         // $invoice = uniqid('#TAX',);
 
         return view('taxs.verify', compact('transaction'));
+    }
+    public function payment($username, $id)
+    {
+        
+        $username = auth()->id();
+        $transaction = Transaction::where(['id' => $id, 'user_id' => $username])->first();
+        return view('payment.index', compact('username','transaction'));
     }
 }

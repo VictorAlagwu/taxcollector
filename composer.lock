@@ -4,126 +4,9 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f636861ac09620b31276d726b4c23122",
-    "content-hash": "6948acf3c69cc09b6f8d47eff3bb6144",
+    "hash": "8c4ff8b04f74582e6ba5d21a457ce92d",
+    "content-hash": "a719fea42865b4ac24db3e11495cdb8a",
     "packages": [
-        {
-            "name": "barryvdh/laravel-dompdf",
-            "version": "v0.8.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/barryvdh/laravel-dompdf.git",
-                "reference": "7dcdecfa125c174d0abe723603633dc2756ea3af"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/barryvdh/laravel-dompdf/zipball/7dcdecfa125c174d0abe723603633dc2756ea3af",
-                "reference": "7dcdecfa125c174d0abe723603633dc2756ea3af",
-                "shasum": ""
-            },
-            "require": {
-                "dompdf/dompdf": "^0.8",
-                "illuminate/support": "5.1.x|5.2.x|5.3.x|5.4.x|5.5.x|5.6.x",
-                "php": ">=5.5.9"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "0.8-dev"
-                },
-                "laravel": {
-                    "providers": [
-                        "Barryvdh\\DomPDF\\ServiceProvider"
-                    ],
-                    "aliases": {
-                        "PDF": "Barryvdh\\DomPDF\\Facade"
-                    }
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Barryvdh\\DomPDF\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Barry vd. Heuvel",
-                    "email": "barryvdh@gmail.com"
-                }
-            ],
-            "description": "A DOMPDF Wrapper for Laravel",
-            "keywords": [
-                "dompdf",
-                "laravel",
-                "pdf"
-            ],
-            "time": "2018-02-07 17:43:25"
-        },
-        {
-            "name": "barryvdh/laravel-snappy",
-            "version": "v0.4.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/barryvdh/laravel-snappy.git",
-                "reference": "5f6e7f3ba15c867d1b8e2885d454110270616ebe"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/barryvdh/laravel-snappy/zipball/5f6e7f3ba15c867d1b8e2885d454110270616ebe",
-                "reference": "5f6e7f3ba15c867d1b8e2885d454110270616ebe",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/filesystem": "5.0.x|5.1.x|5.2.x|5.3.x|5.4.x|5.5.x|5.6.x",
-                "illuminate/support": "5.0.x|5.1.x|5.2.x|5.3.x|5.4.x|5.5.x|5.6.x",
-                "knplabs/knp-snappy": "^1",
-                "php": ">=5.4.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "0.4-dev"
-                },
-                "laravel": {
-                    "providers": [
-                        "Barryvdh\\Snappy\\ServiceProvider"
-                    ],
-                    "aliases": {
-                        "PDF": "Barryvdh\\Snappy\\Facades\\SnappyPdf",
-                        "SnappyImage": "Barryvdh\\Snappy\\Facades\\SnappyImage"
-                    }
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Barryvdh\\Snappy\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Barry vd. Heuvel",
-                    "email": "barryvdh@gmail.com"
-                }
-            ],
-            "description": "Snappy PDF/Image for Laravel 4",
-            "keywords": [
-                "image",
-                "laravel",
-                "pdf",
-                "snappy",
-                "wkhtmltoimage",
-                "wkhtmltopdf"
-            ],
-            "time": "2018-02-08 15:58:26"
-        },
         {
             "name": "dnoegel/php-xdg-base-dir",
             "version": "0.1",
@@ -277,68 +160,6 @@
                 "parser"
             ],
             "time": "2014-09-09 13:34:57"
-        },
-        {
-            "name": "dompdf/dompdf",
-            "version": "v0.8.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/dompdf/dompdf.git",
-                "reference": "5113accd9ae5d466077cce5208dcf3fb871bf8f6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/dompdf/dompdf/zipball/5113accd9ae5d466077cce5208dcf3fb871bf8f6",
-                "reference": "5113accd9ae5d466077cce5208dcf3fb871bf8f6",
-                "shasum": ""
-            },
-            "require": {
-                "ext-dom": "*",
-                "ext-gd": "*",
-                "ext-mbstring": "*",
-                "phenx/php-font-lib": "0.5.*",
-                "phenx/php-svg-lib": "0.3.*",
-                "php": ">=5.4.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "4.8.*",
-                "squizlabs/php_codesniffer": "2.*"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-develop": "0.7-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Dompdf\\": "src/"
-                },
-                "classmap": [
-                    "lib/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "LGPL-2.1"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Ménager",
-                    "email": "fabien.menager@gmail.com"
-                },
-                {
-                    "name": "Brian Sweeney",
-                    "email": "eclecticgeek@gmail.com"
-                },
-                {
-                    "name": "Gabriel Bull",
-                    "email": "me@gabrielbull.com"
-                }
-            ],
-            "description": "DOMPDF is a CSS 2.1 compliant HTML to PDF converter",
-            "homepage": "https://github.com/dompdf/dompdf",
-            "time": "2017-11-26 14:49:08"
         },
         {
             "name": "egulias/email-validator",
@@ -501,84 +322,185 @@
             "time": "2017-06-15 17:19:42"
         },
         {
-            "name": "h4cc/wkhtmltoimage-i386",
-            "version": "0.12.4",
+            "name": "guzzlehttp/guzzle",
+            "version": "6.3.3",
             "source": {
                 "type": "git",
-                "url": "https://github.com/h4cc/wkhtmltoimage-i386.git",
-                "reference": "64f7a1c7d1e42d6741e22a080206c00c4899e88b"
+                "url": "https://github.com/guzzle/guzzle.git",
+                "reference": "407b0cb880ace85c9b63c5f9551db498cb2d50ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/h4cc/wkhtmltoimage-i386/zipball/64f7a1c7d1e42d6741e22a080206c00c4899e88b",
-                "reference": "64f7a1c7d1e42d6741e22a080206c00c4899e88b",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/407b0cb880ace85c9b63c5f9551db498cb2d50ba",
+                "reference": "407b0cb880ace85c9b63c5f9551db498cb2d50ba",
                 "shasum": ""
             },
-            "bin": [
-                "bin/wkhtmltoimage-i386"
-            ],
+            "require": {
+                "guzzlehttp/promises": "^1.0",
+                "guzzlehttp/psr7": "^1.4",
+                "php": ">=5.5"
+            },
+            "require-dev": {
+                "ext-curl": "*",
+                "phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.4 || ^7.0",
+                "psr/log": "^1.0"
+            },
+            "suggest": {
+                "psr/log": "Required for using the Log middleware"
+            },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "6.3-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/functions_include.php"
+                ],
+                "psr-4": {
+                    "GuzzleHttp\\": "src/"
+                }
+            },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "LGPL Version 3"
+                "MIT"
             ],
             "authors": [
                 {
-                    "name": "Julius Beckmann",
-                    "email": "github@h4cc.de"
+                    "name": "Michael Dowling",
+                    "email": "mtdowling@gmail.com",
+                    "homepage": "https://github.com/mtdowling"
                 }
             ],
-            "description": "Convert html to image using webkit (qtwebkit). Static linked linux binary for i386 systems.",
-            "homepage": "http://wkhtmltopdf.org/",
+            "description": "Guzzle is a PHP HTTP client library",
+            "homepage": "http://guzzlephp.org/",
             "keywords": [
-                "binary",
-                "convert",
-                "image",
-                "snapshot",
-                "thumbnail",
-                "wkhtmltoimage"
+                "client",
+                "curl",
+                "framework",
+                "http",
+                "http client",
+                "rest",
+                "web service"
             ],
-            "time": "2018-01-15 07:28:21"
+            "time": "2018-04-22 15:46:56"
         },
         {
-            "name": "h4cc/wkhtmltopdf-i386",
-            "version": "0.12.4",
+            "name": "guzzlehttp/promises",
+            "version": "v1.3.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/h4cc/wkhtmltopdf-i386.git",
-                "reference": "da14486ec8eba1873b026b56126ed02d2f2ae5e3"
+                "url": "https://github.com/guzzle/promises.git",
+                "reference": "a59da6cf61d80060647ff4d3eb2c03a2bc694646"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/h4cc/wkhtmltopdf-i386/zipball/da14486ec8eba1873b026b56126ed02d2f2ae5e3",
-                "reference": "da14486ec8eba1873b026b56126ed02d2f2ae5e3",
+                "url": "https://api.github.com/repos/guzzle/promises/zipball/a59da6cf61d80060647ff4d3eb2c03a2bc694646",
+                "reference": "a59da6cf61d80060647ff4d3eb2c03a2bc694646",
                 "shasum": ""
             },
-            "bin": [
-                "bin/wkhtmltopdf-i386"
-            ],
+            "require": {
+                "php": ">=5.5.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.0"
+            },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.4-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "GuzzleHttp\\Promise\\": "src/"
+                },
+                "files": [
+                    "src/functions_include.php"
+                ]
+            },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "LGPL Version 3"
+                "MIT"
             ],
             "authors": [
                 {
-                    "name": "Julius Beckmann",
-                    "email": "github@h4cc.de"
+                    "name": "Michael Dowling",
+                    "email": "mtdowling@gmail.com",
+                    "homepage": "https://github.com/mtdowling"
                 }
             ],
-            "description": "Convert html to pdf using webkit (qtwebkit). Static linked linux binary for i386 systems.",
-            "homepage": "http://wkhtmltopdf.org/",
+            "description": "Guzzle promises library",
             "keywords": [
-                "binary",
-                "convert",
-                "pdf",
-                "snapshot",
-                "thumbnail",
-                "wkhtmltopdf"
+                "promise"
             ],
-            "time": "2018-01-15 07:18:15"
+            "time": "2016-12-20 10:07:11"
+        },
+        {
+            "name": "guzzlehttp/psr7",
+            "version": "1.4.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/guzzle/psr7.git",
+                "reference": "f5b8a8512e2b58b0071a7280e39f14f72e05d87c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/f5b8a8512e2b58b0071a7280e39f14f72e05d87c",
+                "reference": "f5b8a8512e2b58b0071a7280e39f14f72e05d87c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0",
+                "psr/http-message": "~1.0"
+            },
+            "provide": {
+                "psr/http-message-implementation": "1.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.4-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "GuzzleHttp\\Psr7\\": "src/"
+                },
+                "files": [
+                    "src/functions_include.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Dowling",
+                    "email": "mtdowling@gmail.com",
+                    "homepage": "https://github.com/mtdowling"
+                },
+                {
+                    "name": "Tobias Schultze",
+                    "homepage": "https://github.com/Tobion"
+                }
+            ],
+            "description": "PSR-7 message implementation that also provides common utility methods",
+            "keywords": [
+                "http",
+                "message",
+                "request",
+                "response",
+                "stream",
+                "uri",
+                "url"
+            ],
+            "time": "2017-03-20 17:10:46"
         },
         {
             "name": "jakub-onderka/php-console-color",
@@ -666,72 +588,6 @@
                 }
             ],
             "time": "2015-04-20 18:58:01"
-        },
-        {
-            "name": "knplabs/knp-snappy",
-            "version": "v1.0.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/KnpLabs/snappy.git",
-                "reference": "144c4ecd1ccaeda936bf832b93079efc490e6850"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/KnpLabs/snappy/zipball/144c4ecd1ccaeda936bf832b93079efc490e6850",
-                "reference": "144c4ecd1ccaeda936bf832b93079efc490e6850",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.6",
-                "psr/log": "^1.0",
-                "symfony/process": "~2.3 || ~3.0 || ~4.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~4.8.36"
-            },
-            "suggest": {
-                "h4cc/wkhtmltoimage-amd64": "Provides wkhtmltoimage-amd64 binary for Linux-compatible machines, use version `~0.12` as dependency",
-                "h4cc/wkhtmltoimage-i386": "Provides wkhtmltoimage-i386 binary for Linux-compatible machines, use version `~0.12` as dependency",
-                "h4cc/wkhtmltopdf-amd64": "Provides wkhtmltopdf-amd64 binary for Linux-compatible machines, use version `~0.12` as dependency",
-                "h4cc/wkhtmltopdf-i386": "Provides wkhtmltopdf-i386 binary for Linux-compatible machines, use version `~0.12` as dependency",
-                "wemersonjanuario/wkhtmltopdf-windows": "Provides wkhtmltopdf executable for Windows, use version `~0.12` as dependency"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Knp\\Snappy\\": "src/Knp/Snappy"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "KnpLabs Team",
-                    "homepage": "http://knplabs.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "http://github.com/KnpLabs/snappy/contributors"
-                }
-            ],
-            "description": "PHP5 library allowing thumbnail, snapshot or PDF generation from a url or a html page. Wrapper for wkhtmltopdf/wkhtmltoimage.",
-            "homepage": "http://github.com/KnpLabs/snappy",
-            "keywords": [
-                "knp",
-                "knplabs",
-                "pdf",
-                "snapshot",
-                "thumbnail",
-                "wkhtmltopdf"
-            ],
-            "time": "2018-01-22 19:40:51"
         },
         {
             "name": "laravel/framework",
@@ -1138,16 +994,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "1.29.0",
+            "version": "1.29.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "b1cc4493fafb1b1402d50474fe6305e0558c6829"
+                "reference": "ed6aa898982f441ccc9b2acdec51490f2bc5d337"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/b1cc4493fafb1b1402d50474fe6305e0558c6829",
-                "reference": "b1cc4493fafb1b1402d50474fe6305e0558c6829",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/ed6aa898982f441ccc9b2acdec51490f2bc5d337",
+                "reference": "ed6aa898982f441ccc9b2acdec51490f2bc5d337",
                 "shasum": ""
             },
             "require": {
@@ -1182,20 +1038,20 @@
                 "datetime",
                 "time"
             ],
-            "time": "2018-05-24 13:09:20"
+            "time": "2018-05-29 15:23:46"
         },
         {
             "name": "nikic/php-parser",
-            "version": "v4.0.1",
+            "version": "v4.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "e4a54fa90a5cd8e8dd3fb4099942681731c5cdd3"
+                "reference": "35b8caf75e791ba1b2d24fec1552168d72692b12"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/e4a54fa90a5cd8e8dd3fb4099942681731c5cdd3",
-                "reference": "e4a54fa90a5cd8e8dd3fb4099942681731c5cdd3",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/35b8caf75e791ba1b2d24fec1552168d72692b12",
+                "reference": "35b8caf75e791ba1b2d24fec1552168d72692b12",
                 "shasum": ""
             },
             "require": {
@@ -1233,20 +1089,20 @@
                 "parser",
                 "php"
             ],
-            "time": "2018-03-25 17:35:16"
+            "time": "2018-06-03 11:33:10"
         },
         {
             "name": "paragonie/random_compat",
-            "version": "v2.0.12",
+            "version": "v2.0.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/paragonie/random_compat.git",
-                "reference": "258c89a6b97de7dfaf5b8c7607d0478e236b04fb"
+                "reference": "10bcb46e8f3d365170f6de9d05245aa066b81f09"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/258c89a6b97de7dfaf5b8c7607d0478e236b04fb",
-                "reference": "258c89a6b97de7dfaf5b8c7607d0478e236b04fb",
+                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/10bcb46e8f3d365170f6de9d05245aa066b81f09",
+                "reference": "10bcb46e8f3d365170f6de9d05245aa066b81f09",
                 "shasum": ""
             },
             "require": {
@@ -1278,87 +1134,11 @@
             "description": "PHP 5.x polyfill for random_bytes() and random_int() from PHP 7",
             "keywords": [
                 "csprng",
+                "polyfill",
                 "pseudorandom",
                 "random"
             ],
-            "time": "2018-04-04 21:24:14"
-        },
-        {
-            "name": "phenx/php-font-lib",
-            "version": "0.5.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/PhenX/php-font-lib.git",
-                "reference": "760148820110a1ae0936e5cc35851e25a938bc97"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/PhenX/php-font-lib/zipball/760148820110a1ae0936e5cc35851e25a938bc97",
-                "reference": "760148820110a1ae0936e5cc35851e25a938bc97",
-                "shasum": ""
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^4.8"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "FontLib\\": "src/FontLib"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "LGPL-3.0"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Ménager",
-                    "email": "fabien.menager@gmail.com"
-                }
-            ],
-            "description": "A library to read, parse, export and make subsets of different types of font files.",
-            "homepage": "https://github.com/PhenX/php-font-lib",
-            "time": "2017-09-13 16:14:37"
-        },
-        {
-            "name": "phenx/php-svg-lib",
-            "version": "v0.3.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/PhenX/php-svg-lib.git",
-                "reference": "ccc46ef6340d4b8a4a68047e68d8501ea961442c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/PhenX/php-svg-lib/zipball/ccc46ef6340d4b8a4a68047e68d8501ea961442c",
-                "reference": "ccc46ef6340d4b8a4a68047e68d8501ea961442c",
-                "shasum": ""
-            },
-            "require": {
-                "sabberworm/php-css-parser": "8.1.*"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~5.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Svg\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "LGPL-3.0"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Ménager",
-                    "email": "fabien.menager@gmail.com"
-                }
-            ],
-            "description": "A library to read, parse and export to PDF SVG files.",
-            "homepage": "https://github.com/PhenX/php-svg-lib",
-            "time": "2018-06-03 10:10:03"
+            "time": "2018-06-08 15:26:40"
         },
         {
             "name": "psr/container",
@@ -1408,6 +1188,56 @@
                 "psr"
             ],
             "time": "2017-02-14 16:28:37"
+        },
+        {
+            "name": "psr/http-message",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/http-message.git",
+                "reference": "f6561bf28d520154e4b0ec72be95418abe6d9363"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/http-message/zipball/f6561bf28d520154e4b0ec72be95418abe6d9363",
+                "reference": "f6561bf28d520154e4b0ec72be95418abe6d9363",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Http\\Message\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interface for HTTP messages",
+            "homepage": "https://github.com/php-fig/http-message",
+            "keywords": [
+                "http",
+                "http-message",
+                "psr",
+                "psr-7",
+                "request",
+                "response"
+            ],
+            "time": "2016-08-06 14:39:51"
         },
         {
             "name": "psr/log",
@@ -1506,16 +1336,16 @@
         },
         {
             "name": "psy/psysh",
-            "version": "v0.9.4",
+            "version": "v0.9.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bobthecow/psysh.git",
-                "reference": "4d969a0e08e1e05e7207c07cb4207017ecc9a331"
+                "reference": "4a2ce86f199d51b6e2524214dc06835e872f4fce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/4d969a0e08e1e05e7207c07cb4207017ecc9a331",
-                "reference": "4d969a0e08e1e05e7207c07cb4207017ecc9a331",
+                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/4a2ce86f199d51b6e2524214dc06835e872f4fce",
+                "reference": "4a2ce86f199d51b6e2524214dc06835e872f4fce",
                 "shasum": ""
             },
             "require": {
@@ -1574,7 +1404,7 @@
                 "interactive",
                 "shell"
             ],
-            "time": "2018-05-22 06:48:07"
+            "time": "2018-06-10 17:57:20"
         },
         {
             "name": "ramsey/uuid",
@@ -1655,50 +1485,6 @@
                 "uuid"
             ],
             "time": "2018-01-20 00:28:24"
-        },
-        {
-            "name": "sabberworm/php-css-parser",
-            "version": "8.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/sabberworm/PHP-CSS-Parser.git",
-                "reference": "850cbbcbe7fbb155387a151ea562897a67e242ef"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/sabberworm/PHP-CSS-Parser/zipball/850cbbcbe7fbb155387a151ea562897a67e242ef",
-                "reference": "850cbbcbe7fbb155387a151ea562897a67e242ef",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.2"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "*"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Sabberworm\\CSS": "lib/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Raphael Schweikert"
-                }
-            ],
-            "description": "Parser for CSS Files written in PHP",
-            "homepage": "http://www.sabberworm.com/blog/2010/6/10/php-css-parser",
-            "keywords": [
-                "css",
-                "parser",
-                "stylesheet"
-            ],
-            "time": "2016-07-19 19:14:21"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -2673,6 +2459,65 @@
             "time": "2017-11-27 11:13:29"
         },
         {
+            "name": "unicodeveloper/laravel-paystack",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/unicodeveloper/laravel-paystack.git",
+                "reference": "d2226192de7781386a63748c0815767481e003cc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/unicodeveloper/laravel-paystack/zipball/d2226192de7781386a63748c0815767481e003cc",
+                "reference": "d2226192de7781386a63748c0815767481e003cc",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "5.*|6.*",
+                "illuminate/support": "5.*",
+                "php": "^5.4.0|^7.0"
+            },
+            "require-dev": {
+                "mockery/mockery": ">=0.7.2",
+                "phpunit/phpunit": "4.*",
+                "satooshi/php-coveralls": "^0.7.0",
+                "scrutinizer/ocular": "~1.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Unicodeveloper\\Paystack\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "unicodeveloper",
+                    "email": "prosperotemuyiwa@gmail.com"
+                },
+                {
+                    "name": "iamfunsho",
+                    "email": "info@devfunsho.com"
+                }
+            ],
+            "description": "A Laravel 5 Package for Paystack",
+            "keywords": [
+                "github",
+                "laravel",
+                "laravel 5",
+                "open source",
+                "payments",
+                "paystack",
+                "paystack.co",
+                "php",
+                "subscription"
+            ],
+            "time": "2016-12-24 08:05:37"
+        },
+        {
             "name": "vlucas/phpdotenv",
             "version": "v2.4.0",
             "source": {
@@ -2780,16 +2625,16 @@
         },
         {
             "name": "filp/whoops",
-            "version": "2.1.14",
+            "version": "2.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filp/whoops.git",
-                "reference": "c6081b8838686aa04f1e83ba7e91f78b7b2a23e6"
+                "reference": "181c4502d8f34db7aed7bfe88d4f87875b8e947a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filp/whoops/zipball/c6081b8838686aa04f1e83ba7e91f78b7b2a23e6",
-                "reference": "c6081b8838686aa04f1e83ba7e91f78b7b2a23e6",
+                "url": "https://api.github.com/repos/filp/whoops/zipball/181c4502d8f34db7aed7bfe88d4f87875b8e947a",
+                "reference": "181c4502d8f34db7aed7bfe88d4f87875b8e947a",
                 "shasum": ""
             },
             "require": {
@@ -2797,9 +2642,9 @@
                 "psr/log": "^1.0.1"
             },
             "require-dev": {
-                "mockery/mockery": "0.9.*",
+                "mockery/mockery": "^0.9 || ^1.0",
                 "phpunit/phpunit": "^4.8.35 || ^5.7",
-                "symfony/var-dumper": "^2.6 || ^3.0"
+                "symfony/var-dumper": "^2.6 || ^3.0 || ^4.0"
             },
             "suggest": {
                 "symfony/var-dumper": "Pretty print complex values better with var-dumper available",
@@ -2808,7 +2653,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.0-dev"
+                    "dev-master": "2.1-dev"
                 }
             },
             "autoload": {
@@ -2837,7 +2682,7 @@
                 "throwable",
                 "whoops"
             ],
-            "time": "2017-11-23 18:22:44"
+            "time": "2018-03-03 17:56:25"
         },
         {
             "name": "fzaninotto/faker",
@@ -3700,16 +3545,16 @@
         },
         {
             "name": "phpunit/phpunit-mock-objects",
-            "version": "5.0.6",
+            "version": "5.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit-mock-objects.git",
-                "reference": "33fd41a76e746b8fa96d00b49a23dadfa8334cdf"
+                "reference": "3eaf040f20154d27d6da59ca2c6e28ac8fd56dce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/33fd41a76e746b8fa96d00b49a23dadfa8334cdf",
-                "reference": "33fd41a76e746b8fa96d00b49a23dadfa8334cdf",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/3eaf040f20154d27d6da59ca2c6e28ac8fd56dce",
+                "reference": "3eaf040f20154d27d6da59ca2c6e28ac8fd56dce",
                 "shasum": ""
             },
             "require": {
@@ -3755,7 +3600,7 @@
                 "mock",
                 "xunit"
             ],
-            "time": "2018-01-06 05:45:45"
+            "time": "2018-05-29 13:50:43"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",

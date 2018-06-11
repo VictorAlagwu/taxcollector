@@ -299,14 +299,31 @@
                     <hr>
               
                     <div class="text-right">
-                        <button type="submit" class="btn btn-animate btn-animate-side btn-primary">
-                        <span><i class="icon wb-shopping-cart" aria-hidden="true"></i> Proceed
-                            to payment</span>
-                        </button>
-                        <button type="button" class="btn btn-animate btn-animate-side btn-default btn-outline"
-                        onclick="javascript:window.print();">
-                        <span><i class="icon wb-print" aria-hidden="true"></i> Print</span>
-                        </button>
+                                <form method="POST" action="{{ route('pay') }}" accept-charset="UTF-8" class="form-horizontal" role="form">
+                            
+                                    <input type="hidden" name="email" value="{{$transaction->user->email}}"> {{-- required --}}
+                                    <input type="hidden" name="orderID" value="{{'#TAX'.$transaction->id}}">
+                                    <input type="hidden" name="amount" value="{{($transaction->taxable/$transaction->user->occupation->taxrate)*100}}"> {{-- required in kobo --}}
+                                    <input type="hidden" name="quantity" value="1">
+                                    <input type="hidden" name="reference" value="{{ Paystack::genTranxRef() }}"> {{-- required --}}
+                                    {{ csrf_field() }} {{-- works only when using laravel 5.1, 5.2 --}}
+                        
+                                        <input type="hidden" name="_token" value="{{ csrf_token() }}"> {{-- employ this in place of csrf_field only in laravel 5.0 --}}
+                        
+                        
+                                    <p>
+                                        
+                                    </p>
+                                    <button class="btn btn-animate btn-animate-side btn-success" type="submit" value="Pay Now!">
+                                        <span><i class="fa fa-plus-circle"></i> Pay Now!</span>
+                                    </button>
+                                    <button type="button" class="btn btn-animate btn-animate-side btn-default btn-outline"
+                                                 onclick="javascript:window.print();">
+                                    <span><i class="fa fa-print" aria-hidden="true"></i> Print</span>
+                                    </button>
+                                </form>
+                        
+                        
                     </div>
                 </div>
             </div>

@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('generate-pdf', 'PdfGenerateController@getInvoice')->name('invoice');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -30,4 +30,9 @@ Route::get('invoice', 'HomeController@getInvoice');
 Route::get('tax/all', 'TransactionController@index');
 Route::get('tax', 'TransactionController@create');
 Route::post('tax/create', 'TransactionController@store');
-Route::get('tax/verify/{id}', 'TransactionController@taxVerify');
+Route::get('tax/verify/{id}', 'TransactionController@taxVerify')->name('tax/verify');
+
+Route::get('{username}/tax/{id}/payment', 'TransactionController@payment')->name('tax/payment');
+
+Route::get('/payment/callback', 'PaymentController@handleGatewayCallback');
+Route::post('/pay', 'PaymentController@redirectToGateway')->name('pay'); 

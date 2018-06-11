@@ -52,7 +52,6 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Make Tax Payment</a>
                         <ul class="sub-menu children dropdown-menu">
                         <li><i class="fa fa-file-word-o"></i><a href="{{url('tax')}}">Generate Tax Invoice</a></li>
-                            <li><i class="fa fa-id-card-o"></i><a href="">Make Payment</a></li>
                         </ul>
                     </li>
 
@@ -62,8 +61,7 @@
                             <li><i class="menu-icon fa fa-area-chart"></i><a href="{{url('tax/all')}}">View Tax History</a></li>
                         </ul>
                     </li>
-                    <h3 class="menu-title">Chat</h3><!-- /.menu-title -->
-                    <li><i class="menu-icon fa fa-sign-in"></i><a href="page-login.html">Chat with Admin</a></li>
+            
                   
                 </ul>
             </div><!-- /.navbar-collapse -->

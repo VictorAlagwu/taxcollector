@@ -27,7 +27,7 @@
             <tbody>
                 @foreach($transactions as $transaction)
               <tr>
-                <td>{{'#TAX'. $transaction->id}}</td>
+              <td><a href="{{route('tax/verify', ['id'=>$transaction->id])}}">{{'#TAX'. $transaction->id}}</a></td>
                 <td>{{$transaction->user->name.' '.$transaction->user->lastname}}</td>
                 <td>{{$transaction->user->occupation->name}}</td>
                 <td>{{$transaction->user->country}}</td>
