@@ -36,3 +36,7 @@ Route::get('{username}/tax/{id}/payment', 'TransactionController@payment')->name
 
 Route::get('/payment/callback', 'PaymentController@handleGatewayCallback');
 Route::post('/pay', 'PaymentController@redirectToGateway')->name('pay'); 
+
+
+Route::get('admin/taxs', 'AdminController@viewTax');
+Route::get('admin', 'AdminController@index');

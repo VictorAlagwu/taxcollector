@@ -54,7 +54,7 @@ class TransactionController extends Controller
         
         $this->validate($request, [
             'transport' => 'integer|between:0,20000',
-            'housing' => 'integer|between:0,150000',
+            'housing' => 'integer|between:0,10000',
             'utility' => 'integer|between:0,10000',
             'entertainment' => 'integer|between:0,6000',
             'children_num' => 'integer|between:1,4',
@@ -90,7 +90,7 @@ class TransactionController extends Controller
         $transaction['taxable'] = $transaction['grosspay'] - $transaction['freepay'];
         $transaction['status'] = "pending";
 
-        // dd($transaction);
+        
         $transaction = Transaction::create($transaction);
         return redirect('tax/verify/'.$transaction->id);
 
