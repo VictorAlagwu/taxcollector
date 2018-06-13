@@ -40,3 +40,5 @@ Route::post('/pay', 'PaymentController@redirectToGateway')->name('pay');
 
 Route::get('admin/taxs', 'AdminController@viewTax');
 Route::get('admin', 'AdminController@index');
+
+Route::get('admin/tax/status/', 'AdminController@updateStatus');

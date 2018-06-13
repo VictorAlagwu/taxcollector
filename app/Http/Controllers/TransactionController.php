@@ -125,9 +125,19 @@ class TransactionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function updateStatus(Request $request)
     {
         //
+        $id = $request->get('id');
+        $transaction = Transaction::findOrFail($id);
+        // if($transaction->status == "pending"){
+            
+        // } else {
+        //     $transaction->status = "pending";
+        // }
+        $transaction->status = "approved";
+        $transaction->save();
+        return back();
     }
 
     /**

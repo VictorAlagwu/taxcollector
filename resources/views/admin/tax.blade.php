@@ -99,14 +99,14 @@ input:checked + .slider:before {
                 <td>₦{{number_format($transaction->taxable/$transaction->user->occupation->taxrate)}}.00</td>
                 <td>{!! $transaction->status == 'pending' ? '<strong class="alert alert-danger">Pending</strong>':'<strong class="alert alert-success">Approved</strong>'!!}</td>
                 <td>
-                  <form>
-                      <label class="switch">
-                          <input type="checkbox">
-                          <span class="slider round"></span>
-                        </label>
-                  </form>
+                  <label class="switch">
+                    <input type="hidden" name="trans_id" class="transId" data-id="{{$transaction->id}}" value="{{$transaction->id}}">
+                      <input type="checkbox">
+                      <span class="slider round"></span>
+                    </label>
                 </td>
               </tr>
+              
               @endforeach
             </tbody>
           </table>
@@ -117,4 +117,28 @@ input:checked + .slider:before {
 
         </div>
     </div><!-- .animated -->
+
 @endsection
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> 
+<script>
+    $(document).ready(function(){
+      $("input:checkbox").change(function(e) {
+        e.preventDefault();
+        let id = $(this).data('id');
+      // var id = parseInt($(this).data('trans-id'));
+      
+      $.ajax({
+              type:'GET',
+              url:"{{url('/admin/tax/status/')}}",
+              headers: {'X-CSRF-TOKEN': '{{ csrf_token() }}' },
+              data: { "id" : id },
+              success: function(data){
+                console.log(id);
+              },
+              error: function(jqXHR, textStatus, errorThrown){
+                console.log('Error');
+              }
+          });
+      });
+    });
+</script>
