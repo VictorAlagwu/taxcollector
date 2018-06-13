@@ -3,5 +3,7 @@
 *.css linguist-vendored
 *.scss linguist-vendored
 *.js linguist-vendored
+*.svg linguist-vendored
 public/* linguist-vendored
+storage/* linguist-vendored
 CHANGELOG.md export-ignore
