@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Occupation;
-use PDF;
+use App\Transaction;
 
 class HomeController extends Controller
 {
@@ -26,7 +26,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $id  = auth()->id();
+        $transactions = Transaction::where('user_id', $id)->get();
+        $approvedTax = Transaction::where(['status'=>'approved', 'user_id'=>$id]);
+        $pendingTax = Transaction::where(['status' => 'approved', 'user_id' => $id]);
+        return view('home', compact('transactions', 'approvedTax', 'pendingTax'));
     }
 
     public function applyTax()
@@ -34,18 +38,5 @@ class HomeController extends Controller
         return view('invoice.apply');
     }
 
-    public function getInvoice(Request $request)
-    {
-        $user = User::where('id', auth()->id())->get()->first();
-        view()->share('user',$user);
-
-        if($request->has('download')) {
-        	// pass view file
-            $pdf = PDF::loadView('invoice.invoice');
-            // download pdf
-            return $pdf->download('taxinvoice.pdf');
-        }
-       
-        return view('invoice.invoice');
-    }
+    
 }

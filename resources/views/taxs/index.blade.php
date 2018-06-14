@@ -19,9 +19,11 @@
                 <th>Gender</th>
                 <th>Marital Status</th>
                 <th>Gross Pay</th>
-                <th>Untaxable Income</th>
+                <th>Non-taxable Income</th>
                 <th>Taxable Income</th>
                 <th>Tax (Monthly)</th>
+                <th>Month</th>
+                <th>Status</th>
               </tr>
             </thead>
             <tbody>
@@ -38,6 +40,8 @@
                 <td>₦{{number_format($transaction->freepay).'.00'}}</td>
                 <td>₦{{number_format($transaction->taxable).'.00'}}</td>
                 <td>₦{{number_format($transaction->taxable/$transaction->user->occupation->taxrate)}}.00</td>
+                <td>{{Carbon::parse($transaction->period)}}</td>
+                <td>{!! $transaction->status == 'pending' ? '<strong class="alert alert-danger">Pending</strong>':'<strong class="alert alert-success">Approved</strong>'!!}</td>        
               </tr>
               @endforeach
             </tbody>

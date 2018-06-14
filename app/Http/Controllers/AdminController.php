@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Transaction;
+use App\User;
+use App\Occupation;
 
 class AdminController extends Controller
 {
@@ -21,7 +23,11 @@ class AdminController extends Controller
     public function index()
     {
         $transactions = Transaction::all();
-        return view('admin.index', compact('transactions'));
+        $users = User::all();
+        $approvedTax = Transaction::where('status','approved');
+        $pendingTax = Transaction::where('status','approved');
+        $occupations = Occupation::all();
+        return view('admin.index', compact('transactions', 'users', 'approvedTax', 'pendingTax', 'occupations'));
     }
 
     public function viewTax()
@@ -30,8 +36,26 @@ class AdminController extends Controller
         return view('admin.tax', compact('transactions'));
     }
 
-    public function updateStatus()
+    public function taxApprove($id)
     {
+        //
+       
+        $transaction = Transaction::findOrFail($id);
         
+        $transaction->status = "approved";
+        $transaction->save();
+        return back();
     }
+
+    public function taxReject($id)
+    {
+        //
+       
+        $transaction = Transaction::findOrFail($id);
+       
+        $transaction->status = "pending";
+        $transaction->save();
+        return back();
+    }
+
 }

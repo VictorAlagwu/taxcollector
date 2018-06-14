@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use Unicodeveloper\Paystack\Paystack;
+use Carbon\Carbon;
 use App\Transaction;
 
 class TransactionController extends Controller
@@ -59,9 +60,11 @@ class TransactionController extends Controller
             'entertainment' => 'integer|between:0,6000',
             'children_num' => 'integer|between:1,4',
             'dependant_num' => 'integer|between:1,2',
+            'period' => 'required|unique:transactions',
         ]);
 
         $transaction['user_id'] = auth()->id();
+        $transaction['period'] = $request->period;
         $transaction['income'] = $request->income;
         $transaction['transport'] = empty($request->transport) ? 0 : $request->transport;
         $transaction['housing'] = empty($request->housing) ? 0 : $request->housing;
@@ -125,21 +128,7 @@ class TransactionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function updateStatus(Request $request)
-    {
-        //
-        $id = $request->get('id');
-        $transaction = Transaction::findOrFail($id);
-        // if($transaction->status == "pending"){
-            
-        // } else {
-        //     $transaction->status = "pending";
-        // }
-        $transaction->status = "approved";
-        $transaction->save();
-        return back();
-    }
-
+   
     /**
      * Remove the specified resource from storage.
      *

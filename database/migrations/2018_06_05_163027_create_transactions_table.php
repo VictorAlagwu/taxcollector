@@ -25,6 +25,8 @@ class CreateTransactionsTable extends Migration
             $table->integer('children_num');
             $table->integer('dependant');
             $table->integer('dependant_num');
+            $table->string('status');
+            $table->string('period')->unique();
             $table->integer('pers');
             $table->integer('pension');
             $table->integer('nhf');

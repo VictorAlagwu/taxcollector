@@ -131,7 +131,7 @@
                                         </td>
                                         <td class="text-center">
                                             Invoice #: {{'#TAX'.$transaction->id}}<br>
-                                        Created: {{$transaction->created_at}}<br>
+                                            Payment: {{Carbon::parse($transaction->period)}}<br>
                                             Due: 7 Days after generating invoice
                                         </td>
                                         
@@ -233,7 +233,7 @@
                         </tr>
                         <tr class="heading">
                             <td>
-                                Untaxable Income(Freepay)
+                                Non-taxable Income(Freepay)
                             </td>
                             
                             <td>
@@ -305,6 +305,7 @@
                                     <input type="hidden" name="orderID" value="{{'#TAX'.$transaction->id}}">
                                     <input type="hidden" name="amount" value="{{($transaction->taxable/$transaction->user->occupation->taxrate)*100}}"> {{-- required in kobo --}}
                                     <input type="hidden" name="quantity" value="1">
+                                    
                                     <input type="hidden" name="reference" value="{{ Paystack::genTranxRef() }}"> {{-- required --}}
                                     {{ csrf_field() }} {{-- works only when using laravel 5.1, 5.2 --}}
                         
@@ -314,9 +315,11 @@
                                     <p>
                                         
                                     </p>
+                                   @if($transaction->status == 'pending')
                                     <button class="btn btn-animate btn-animate-side btn-success" type="submit" value="Pay Now!">
                                         <span><i class="fa fa-plus-circle"></i> Pay Now!</span>
                                     </button>
+                                   @endif
                                     <button type="button" class="btn btn-animate btn-animate-side btn-default btn-outline"
                                                  onclick="javascript:window.print();">
                                     <span><i class="fa fa-print" aria-hidden="true"></i> Print</span>

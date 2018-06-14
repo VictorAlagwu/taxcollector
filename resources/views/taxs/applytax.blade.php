@@ -11,6 +11,18 @@
                 <form class="form-horizontal" method="POST" action="tax/create">
                     {{ csrf_field() }}
                     
+                    <div class="row form-group{{ $errors->has('period') ? ' has-error' : '' }}">
+                            <div class="col col-md-3"><label for="period" class="form-control-label">Tax Month</label></div>
+                            <div class="col-12 col-md-9">
+                                <input id="period" type="month" class="form-control"  name="period" required>
+                            </div>
+                            @if ($errors->has('period'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('period') }}</strong>
+                            </span>
+                        @endif
+                    </div>
+
                     <div class="row form-group">
                         <div class="col col-md-3"><label for="income" class="form-control-label">Basic Income</label></div>
                         <div class="col-12 col-md-9">
@@ -102,7 +114,6 @@
                             @endif
                         </div>
                     </div>
-
                     <div class="row form-group">
                         <div class="col col-md-3"><label for="dependant" class="control-label">Dependant(s) Allowance</label></div>
 
