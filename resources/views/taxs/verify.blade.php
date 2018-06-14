@@ -130,7 +130,7 @@
                                             University of Nigeria, Nsukka
                                         </td>
                                         <td class="text-center">
-                                            Invoice #: {{'#TAX'.$transaction->id}}<br>
+                                            Invoice:{{'#TAX'.$transaction->id}}<br>
                                             Payment: {{date('F, Y', strtotime($transaction->period))}}<br>
                                         </td>
                                         
@@ -291,7 +291,7 @@
                             <td></td>
                             
                             <td>
-                                Tax (Monthly): ₦{{number_format($transaction->taxable/$transaction->user->occupation->taxrate)}}.00
+                                Tax for {{date('F, Y', strtotime($transaction->period))}}: ₦{{number_format($transaction->taxable/$transaction->user->occupation->taxrate)}}.00
                             </td>
                         </tr>
                     </table>

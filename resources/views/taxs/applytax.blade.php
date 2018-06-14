@@ -18,7 +18,7 @@
                             </div>
                             @if ($errors->has('period'))
                             <span class="alert alert-danger mx-auto">
-                                <strong>Sorry, you cannot generate more one invoie for each months</strong>
+                                <strong>Sorry, you cannot generate more one invoice for each months</strong>
                             </span>
                         @endif
                     </div>
@@ -89,7 +89,7 @@
                             <input id="children_num" type="number" class="form-control"   name="children_num">
                             @if ($errors->has('children_num'))
                                 <span class="help-block">
-                                    <strong>{{ $errors->first('children_num') }}</strong>
+                                    <strong>Sorry, the maximun amount of children allowed is 4</strong>
                                 </span>
                             @endif
                         </div>
@@ -109,7 +109,7 @@
                             <input id="dependant_num" type="number" class="form-control" name="dependant_num">
                             @if ($errors->has('dependant_num'))
                                 <span class="help-block">
-                                    <strong>{{ $errors->first('dependant_num') }}</strong>
+                                    <strong>Sorry, the maximun amount of children allowed is 2</strong>
                                 </span>
                             @endif
                         </div>

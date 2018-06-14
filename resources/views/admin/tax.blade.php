@@ -51,8 +51,6 @@
                     <span><i class="fa fa-times"></i>Pending</span>
                     </button>
                   </form>
-
-
                 </td>
               </tr>
               

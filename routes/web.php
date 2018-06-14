@@ -22,7 +22,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('occupations', 'OccupationController@index');
 Route::post('occupations', 'OccupationController@store')->name('occupations');
-Route::get('occupations/create', 'OccupationController@create');
 
 Route::get('apply', 'HomeController@applyTax');
 Route::get('invoice', 'HomeController@getInvoice');
@@ -41,6 +40,5 @@ Route::post('/pay', 'PaymentController@redirectToGateway')->name('pay');
 Route::get('admin/taxs', 'AdminController@viewTax');
 Route::get('admin', 'AdminController@index')->name('admin');
 Route::get('admin/users', 'AdminController@viewUsers');
-
 Route::post('admin/tax/approve/{id}', 'AdminController@taxApprove')->name('admin/tax/approve/');
 Route::post('admin/tax/reject/{id}', 'AdminController@taxReject')->name('admin/tax/reject/');

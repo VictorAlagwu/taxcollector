@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Unicodeveloper\Paystack\Paystack;
 use Carbon\Carbon;
 use App\Transaction;
+use Auth;
 
 class TransactionController extends Controller
 {
@@ -146,11 +147,12 @@ class TransactionController extends Controller
        
         $user = auth()->id();
         
-        if($user || Auth::user()->status == 'admin'){
-            $transaction = Transaction::where(['id' => $id])->first();
+        $transaction = Transaction::where(['id' => $id])->first();
+
+        if($transaction->user_id == $user || Auth::user()->status == 'admin'){
             return view('taxs.verify', compact('transaction'));
         }else{
-            return view('home');
+            return redirect('home');
         }
         
 
@@ -158,7 +160,6 @@ class TransactionController extends Controller
     }
     public function payment($username, $id)
     {
-        
         $username = auth()->id();
         $transaction = Transaction::where(['id' => $id, 'user_id' => $username])->first();
         return view('payment.index', compact('username','transaction'));
