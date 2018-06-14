@@ -10,15 +10,15 @@
             <div class="card-body card-block">
                 <form class="form-horizontal" method="POST" action="tax/create">
                     {{ csrf_field() }}
-                    
+                <input type="hidden" name="user_id" value="{{auth()->id()}}">
                     <div class="row form-group{{ $errors->has('period') ? ' has-error' : '' }}">
                             <div class="col col-md-3"><label for="period" class="form-control-label">Tax Month</label></div>
                             <div class="col-12 col-md-9">
                                 <input id="period" type="month" class="form-control"  name="period" required>
                             </div>
                             @if ($errors->has('period'))
-                            <span class="help-block">
-                                <strong>{{ $errors->first('period') }}</strong>
+                            <span class="alert alert-danger mx-auto">
+                                <strong>Sorry, you cannot generate more one invoie for each months</strong>
                             </span>
                         @endif
                     </div>

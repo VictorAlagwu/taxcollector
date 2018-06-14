@@ -39,7 +39,8 @@ Route::post('/pay', 'PaymentController@redirectToGateway')->name('pay');
 
 
 Route::get('admin/taxs', 'AdminController@viewTax');
-Route::get('admin', 'AdminController@index');
+Route::get('admin', 'AdminController@index')->name('admin');
+Route::get('admin/users', 'AdminController@viewUsers');
 
 Route::post('admin/tax/approve/{id}', 'AdminController@taxApprove')->name('admin/tax/approve/');
 Route::post('admin/tax/reject/{id}', 'AdminController@taxReject')->name('admin/tax/reject/');

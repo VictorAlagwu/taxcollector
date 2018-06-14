@@ -45,7 +45,7 @@
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li class="active">
-                        <a href="{{route('home')}}"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
+                        <a href="{{route('admin')}}"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
                     </li>
                     <h3 class="menu-title">Invoices</h3><!-- /.menu-title -->
                     <li class="menu-item-has-children dropdown">
@@ -55,12 +55,23 @@
                         </ul>
                     </li>
 
+                    <h3 class="menu-title">Users</h3><!-- /.menu-title -->
                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Tax History</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>All Users</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-area-chart"></i><a href="{{url('tax/all')}}">View Tax History</a></li>
+                        <li><i class="fa fa-file-word-o"></i><a href="{{url('admin/users')}}">View All Users</a></li>
                         </ul>
                     </li>
+
+                    <h3 class="menu-title">Occupations</h3>
+                    <li class="menu-item-has-children dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-settings"></i>Occupations</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="fa fa-file-word-o"></i><a href="{{url('occupations')}}">View all Occupations</a></li>
+                            <li><i class="fa fa-file-word-o"></i><a href="{{url('occupations/create')}}">Add New Occupation</a></li>
+                        </ul>
+                    </li>
+
             
                   
                 </ul>
@@ -90,13 +101,20 @@
                         </a>
 
                         <div class="user-menu dropdown-menu">
-                                <a class="nav-link" href="#"><i class="fa fa- user"></i>My Profile</a>
+                                <a class="nav-link" href="{{url('tax')}}"><i class="fa fa- user"></i>Generate Tax Invoice</a>
 
-                                <a class="nav-link" href="#"><i class="fa fa- user"></i>Notifications <span class="count">13</span></a>
+                                <a class="nav-link" href="{{url('tax/all')}}"><i class="fa fa- user"></i>View all Tax Invoices</a>
 
-                                <a class="nav-link" href="#"><i class="fa fa -cog"></i>Settings</a>
+                                <a class="nav-link" href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                                     <i class="fa fa-power -off"></i>
+                                                     Logout
+                                </a>
 
-                                <a class="nav-link" href="#"><i class="fa fa-power -off"></i>Logout</a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    {{ csrf_field() }}
+                                </form>
                         </div>
                     </div>
 

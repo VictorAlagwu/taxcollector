@@ -29,7 +29,7 @@ class HomeController extends Controller
         $id  = auth()->id();
         $transactions = Transaction::where('user_id', $id)->get();
         $approvedTax = Transaction::where(['status'=>'approved', 'user_id'=>$id]);
-        $pendingTax = Transaction::where(['status' => 'approved', 'user_id' => $id]);
+        $pendingTax = Transaction::where(['status' => 'pending', 'user_id' => $id]);
         return view('home', compact('transactions', 'approvedTax', 'pendingTax'));
     }
 

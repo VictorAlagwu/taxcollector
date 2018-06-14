@@ -16,9 +16,6 @@
                 <th>Invoice Num</th>
                 <th>Name</th>
                 <th>Occupation</th>
-                <th>Country</th>
-                <th>Gender</th>
-                <th>Marital Status</th>
                 <th>Gross Pay</th>
                 <th>Non-taxable Income</th>
                 <th>Taxable Income</th>
@@ -33,9 +30,6 @@
               <td><a href="{{route('tax/verify', ['id'=>$transaction->id])}}">{{'#TAX'. $transaction->id}}</a></td>
                 <td>{{$transaction->user->name.' '.$transaction->user->lastname}}</td>
                 <td>{{$transaction->user->occupation->name}}</td>
-                <td>{{$transaction->user->country}}</td>
-                <td>{{$transaction->user->gender}}</td>
-                <td>{{$transaction->user->marital_status}}</td>
                 <td>₦{{number_format($transaction->grosspay).'.00'}}</td>
 
                 <td>₦{{number_format($transaction->freepay).'.00'}}</td>
@@ -74,26 +68,3 @@
     </div><!-- .animated -->
 
 @endsection
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> 
-<script>
-    $(document).ready(function(){
-      $("input:checkbox").change(function(e) {
-        e.preventDefault();
-        let id = $(this).data('id');
-      // var id = parseInt($(this).data('trans-id'));
-      
-      $.ajax({
-              type:'GET',
-              url:"{{url('/admin/tax/status/')}}",
-              headers: {'X-CSRF-TOKEN': '{{ csrf_token() }}' },
-              data: { "id" : id },
-              success: function(data){
-                console.log(id);
-              },
-              error: function(jqXHR, textStatus, errorThrown){
-                console.log('Error');
-              }
-          });
-      });
-    });
-</script>

@@ -131,8 +131,7 @@
                                         </td>
                                         <td class="text-center">
                                             Invoice #: {{'#TAX'.$transaction->id}}<br>
-                                            Payment: {{Carbon::parse($transaction->period)}}<br>
-                                            Due: 7 Days after generating invoice
+                                            Payment: {{date('F, Y', strtotime($transaction->period))}}<br>
                                         </td>
                                         
                                         <td style="text-align:right;">
@@ -315,7 +314,7 @@
                                     <p>
                                         
                                     </p>
-                                   @if($transaction->status == 'pending')
+                                   @if($transaction->status == 'pending' && $transaction->user_id == auth()->id())
                                     <button class="btn btn-animate btn-animate-side btn-success" type="submit" value="Pay Now!">
                                         <span><i class="fa fa-plus-circle"></i> Pay Now!</span>
                                     </button>

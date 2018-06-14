@@ -1,7 +1,7 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('content')
-<div class="container">
+<div class="animated fadeIn">
     <div class="row">
         <div class="col-md-4 col-md-offset-2">
             <h3><a href="{{url('occupations/create')}}">Create Occupation</a></h3>

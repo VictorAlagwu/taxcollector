@@ -60,10 +60,11 @@ class TransactionController extends Controller
             'entertainment' => 'integer|between:0,6000',
             'children_num' => 'integer|between:1,4',
             'dependant_num' => 'integer|between:1,2',
-            'period' => 'required|unique:transactions',
+            'period' => 'required|unique_with:transactions,user_id',
+            'user_id' => 'required',
         ]);
 
-        $transaction['user_id'] = auth()->id();
+        $transaction['user_id'] = $request->user_id;
         $transaction['period'] = $request->period;
         $transaction['income'] = $request->income;
         $transaction['transport'] = empty($request->transport) ? 0 : $request->transport;
@@ -142,13 +143,18 @@ class TransactionController extends Controller
 
     public function taxVerify($id)
     {
-        // $paystack = Paystack::genTranxRef();
+       
         $user = auth()->id();
-        $transaction = Transaction::where(['id' => $id, 'user_id' => $user])->first();
+        
+        if($user || Auth::user()->status == 'admin'){
+            $transaction = Transaction::where(['id' => $id])->first();
+            return view('taxs.verify', compact('transaction'));
+        }else{
+            return view('home');
+        }
+        
 
-        // $invoice = uniqid('#TAX',);
-
-        return view('taxs.verify', compact('transaction'));
+        
     }
     public function payment($username, $id)
     {

@@ -24,8 +24,8 @@ class AdminController extends Controller
     {
         $transactions = Transaction::all();
         $users = User::all();
-        $approvedTax = Transaction::where('status','approved');
-        $pendingTax = Transaction::where('status','approved');
+        $approvedTax = Transaction::where('status','approved')->get();
+        $pendingTax = Transaction::where('status','pending')->get();
         $occupations = Occupation::all();
         return view('admin.index', compact('transactions', 'users', 'approvedTax', 'pendingTax', 'occupations'));
     }
@@ -34,6 +34,12 @@ class AdminController extends Controller
     {
         $transactions = Transaction::all();
         return view('admin.tax', compact('transactions'));
+    }
+
+    public function viewUsers()
+    {
+        $users = User::all();
+        return view('admin.users', compact('users'));   
     }
 
     public function taxApprove($id)
