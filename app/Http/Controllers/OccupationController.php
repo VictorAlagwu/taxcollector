@@ -70,6 +70,8 @@ class OccupationController extends Controller
     public function edit($id)
     {
         //
+        $occupation = Occupation::where('id',$id)->first();
+        return view('occupations.edit', compact('occupation'));
     }
 
     /**
@@ -82,6 +84,13 @@ class OccupationController extends Controller
     public function update(Request $request, $id)
     {
         //
+        
+        $occupation['name'] = $request->name;
+        $occupation['taxrate'] = $request->taxrate;
+
+        Occupation::where('id',$id)->update($occupation);
+
+        return redirect ('occupations');
     }
 
     /**

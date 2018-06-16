@@ -48,6 +48,7 @@
                         <th scope="col">ID</th>
                         <th scope="col">Occupation Name</th>
                         <th scope="col">Occupation Tax Rate</th>
+                        <th scope="col">Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -56,6 +57,18 @@
                             <td scope="row"s>{{$occupation->id}}</td>
                             <td>{{$occupation->name}}</td>
                             <td>{{$occupation->taxrate}}</td>
+                            <td>
+                                <a href="{{route('occupations/edit/', $occupation->id)}}">
+                                    <span><i class="fa fa-edit"></i>Edit</span>
+                                </a>
+                                <form method="POST" action="{{route('occupations/delete/', $occupation->id)}}">
+                                    {{ csrf_field() }}
+                                    <input type="hidden" status="pending"/>
+                                    <button type="submit" class="btn btn-danger">
+                                    <span><i class="fa fa-times"></i>Delete</span>
+                                    </button>
+                                  </form>
+                            </td>
                         </tr>
                     @endforeach
                 </tbody>
