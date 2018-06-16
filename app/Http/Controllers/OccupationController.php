@@ -102,5 +102,9 @@ class OccupationController extends Controller
     public function destroy($id)
     {
         //
+        $occupation = Occupation::findOrFail($id);
+        $occupation->delete();
+
+        return back();
     }
 }

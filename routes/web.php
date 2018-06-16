@@ -24,7 +24,7 @@ Route::get('occupations', 'OccupationController@index');
 Route::post('occupations', 'OccupationController@store')->name('occupations');
 Route::get('occupations/edit/{id}', 'OccupationController@edit')->name('occupations/edit/');
 Route::patch('occupations/edit/{id}', 'OccupationController@update')->name('occupations/edit/');
-Route::delete('occupations/delete/{id}', 'OccupationController@delete')->name('occupations/delete/');
+// Route::delete('occupations/delete/{id}', 'OccupationController@destroy')->name('occupations/delete/');
 
 Route::get('apply', 'HomeController@applyTax');
 Route::get('invoice', 'HomeController@getInvoice');

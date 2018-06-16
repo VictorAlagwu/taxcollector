@@ -61,14 +61,15 @@
                                 <a href="{{route('occupations/edit/', $occupation->id)}}">
                                     <span><i class="fa fa-edit"></i>Edit</span>
                                 </a>
-                                <form method="POST" action="{{route('occupations/delete/', $occupation->id)}}">
+                                {{-- <form method="POST" action="{{route('occupations/delete/', $occupation->id)}}">
                                     {{ csrf_field() }}
+                                    {{ method_field('delete') }}
                                     <input type="hidden" status="pending"/>
                                     <button type="submit" class="btn btn-danger">
                                     <span><i class="fa fa-times"></i>Delete</span>
                                     </button>
                                   </form>
-                            </td>
+                            </td> --}}
                         </tr>
                     @endforeach
                 </tbody>
