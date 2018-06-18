@@ -19,7 +19,6 @@
     <link rel="stylesheet" href="{{asset('assets/css/cs-skin-elastic.css')}}">
     <!-- <link rel="stylesheet" href="{{asset('assets/css/bootstrap-select.less')}}"> -->
     <link rel="stylesheet" href="{{asset('assets/scss/style.css')}}">
-    <link href="{{asset('assets/css/lib/vector-map/jqvmap.min.css')}}" rel="stylesheet">
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
 
@@ -126,32 +125,7 @@
     <script src="{{asset('assets/js/plugins.js')}}"></script>
     <script src="{{asset('assets/js/main.js')}}"></script>
 
-
-    <script src="{{asset('assets/js/lib/chart-js/Chart.bundle.js')}}"></script>
     <script src="{{asset('assets/js/dashboard.js')}}"></script>
-    <script src="{{asset('assets/js/widgets.js')}}"></script>
-    <script src="{{asset('assets/js/lib/vector-map/jquery.vmap.js')}}"></script>
-    <script src="{{asset('assets/js/lib/vector-map/jquery.vmap.min.js')}}"></script>
-    <script src="{{asset('assets/js/lib/vector-map/jquery.vmap.sampledata.js')}}"></script>
-    <script src="{{asset('assets/js/lib/vector-map/country/jquery.vmap.world.js')}}"></script>
-    <script>
-        ( function ( $ ) {
-            "use strict";
-
-            jQuery( '#vmap' ).vectorMap( {
-                map: 'world_en',
-                backgroundColor: null,
-                color: '#ffffff',
-                hoverOpacity: 0.7,
-                selectedColor: '#1de9b6',
-                enableZoom: true,
-                showTooltip: true,
-                values: sample_data,
-                scaleColors: [ '#1de9b6', '#03a9f5' ],
-                normalizeFunction: 'polynomial'
-            } );
-        } )( jQuery );
-    </script>
 
 </body>
 </html>
