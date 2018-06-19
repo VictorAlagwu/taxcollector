@@ -1,9 +1,10 @@
 * text=auto
-*.html linguist-vendored=false
-*.css linguist-vendored=false
-*.scss linguist-vendored=false
-*.js linguist-vendored=false
-*.svg linguist-vendored=false
-public/* linguist-vendored=false
-storage/* linguist-vendored=false
+*.html linguist-vendored
+*.css linguist-vendored
+*.scss linguist-vendored
+*.js linguist-vendored
+*.svg linguist-vendored
+public/assets/css/* linguist-vendored
+public/assets/js/* linguist-vendored
+resources/views/* linguist-vendored
 CHANGELOG.md export-ignore
