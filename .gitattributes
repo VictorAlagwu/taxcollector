@@ -6,5 +6,5 @@
 *.svg linguist-vendored
 public/assets/css/* linguist-vendored
 public/assets/js/* linguist-vendored
-resources/views/* linguist-vendored
+
 CHANGELOG.md export-ignore
