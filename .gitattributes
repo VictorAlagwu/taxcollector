@@ -5,5 +5,5 @@
 *.js linguist-vendored
 *.svg linguist-vendored
 public/* linguist-vendored
-storage/* linguist-vendored
+resources/views/* linguist-vendored
 CHANGELOG.md export-ignore
