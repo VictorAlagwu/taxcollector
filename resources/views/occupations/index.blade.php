@@ -68,8 +68,8 @@
                                     <button type="submit" class="btn btn-danger">
                                     <span><i class="fa fa-times"></i>Delete</span>
                                     </button>
-                                  </form>
-                            </td> --}}
+                                  </form>--}}
+                            </td> 
                         </tr>
                     @endforeach
                 </tbody>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Transaction;
 use Paystack;
 
 class PaymentController extends Controller
@@ -25,7 +26,8 @@ class PaymentController extends Controller
         $paymentDetails = Paystack::getPaymentData();
 
         // dd($paymentDetails);
-        return view('taxs.index');
+        $transactions = Transaction::where('user_id', auth()->id())->get();
+        return view('taxs.index', compact('transactions'));
         // json_decode($paymentDetails);
         // $paymentDetails['']
         // Now you have the payment details,
