@@ -67,7 +67,7 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-settings"></i>Occupations</a>
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="fa fa-file-word-o"></i><a href="{{url('occupations')}}">View all Occupations</a></li>
-                            <li><i class="fa fa-file-word-o"></i><a href="{{url('occupations/create')}}">Add New Occupation</a></li>
+                          
                         </ul>
                     </li>
 
